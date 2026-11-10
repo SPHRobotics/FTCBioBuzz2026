@@ -1,6 +1,7 @@
- public void forward(double speed, double time, boolean flywheel) {
+//not all code has been verified to move in the correct direction, please ensure all code works correctly before reliying heavily on it
+//this movement is meant for a mechanum drivetrain with 4 wheels
 
-
+public void forward(double speed, double time) {
 
 
         runtime.reset();
@@ -9,15 +10,9 @@
             LF.setPower(speed);
             RB.setPower(speed);
             LB.setPower(speed);
-
-            if (flywheel) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
 }
-    public void backward(double speed, double time, boolean flywheel) {
+    public void backward(double speed, double time) {
 
 
         runtime.reset();
@@ -27,16 +22,10 @@
             LF.setPower(-speed);
             RB.setPower(-speed);
             LB.setPower(-speed);
-
-            if (flywheel) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
     }
 
-    public void right(double speed, double time, boolean flywheel) {
+    public void right(double speed, double time) {
 
 
         runtime.reset();
@@ -45,15 +34,9 @@
             LF.setPower(speed);
             RB.setPower(speed);
             LB.setPower(-speed);
-
-            if (flywheel) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
     }
-    public void left(double speed, double time, boolean flywheel) {
+    public void left(double speed, double time) {
 
 
         runtime.reset();
@@ -62,15 +45,9 @@
             LF.setPower(-speed);
             RB.setPower(-speed);
             LB.setPower(speed);
-
-            if (flywheel) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
     }
-    public void spinRight(double speed, double time, boolean flywheel) {
+    public void spinRight(double speed, double time) {
 
 
         runtime.reset();
@@ -79,15 +56,9 @@
             LF.setPower(speed);
             RB.setPower(-speed);
             LB.setPower(speed);
-
-            if (flywheel) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
     }
-    public void spinLeft(double speed, double time, boolean flywheel) {
+    public void spinLeft(double speed, double time) {
 
 
         runtime.reset();
@@ -96,15 +67,9 @@
             LF.setPower(-speed);
             RB.setPower(speed);
             LB.setPower(-speed);
-
-            if (flywheel) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
     }
-    public void rearAxisTurn(double speed, double time, boolean flywheel) {
+    public void rearAxisTurn(double speed, double time) {
 
 
         runtime.reset();
@@ -113,15 +78,9 @@
             LF.setPower(speed);
             RB.setPower(0);
             LB.setPower(0);
-
-            if (flywheel == true) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
     }
-    public void frontAxisTurn(double speed, double time, boolean flywheel) {
+    public void frontAxisTurn(double speed, double time) {
 
 
         runtime.reset();
@@ -130,50 +89,9 @@
             LF.setPower(0);
             RB.setPower(speed);
             LB.setPower(-speed);
-
-            if (flywheel == true) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
 
-    }
-    public void bigBallGate(double time, boolean bigGateOpen, boolean flywheel) {
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < time)) {
-            if (bigGateOpen) {
-            BBG.setPosition(BBG_OPEN);
-        } else {
-            BBG.setPosition(BBG_CLOSED);
-        }
-        if (flywheel == true) {
-            SM.setPower(SM_POWER);
-            SB.setPower(SB_POWER);
-
-        }}
-    }
-
-    public void smallBallGate(double time, boolean smallGateOpen, boolean flywheel) {
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < time)) {
-            if (smallGateOpen){
-            SBG.setPosition(SBG_OPEN);
-        }
-        else {
-            SBG.setPosition(SBG_CLOSED);
-        }
-        if (flywheel) {
-            SM.setPower(SM_POWER);
-            SB.setPower(SB_POWER);
-
-        }}
-
-
-
-
-    }
-    public void brake(double time, boolean flywheel) {
+    public void brake(double time) {
 
 
         runtime.reset();
@@ -182,12 +100,6 @@
             LF.setPower(0);
             RB.setPower(0);
             LB.setPower(0);
-
-            if (flywheel == true) {
-                SM.setPower(SM_POWER);
-                SB.setPower(SB_POWER);
-
-            }
         }
 
 
