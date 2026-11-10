@@ -1,1 +1,195 @@
+ public void forward(double speed, double time, boolean flywheel) {
 
+
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            RF.setPower(speed);
+            LF.setPower(speed);
+            RB.setPower(speed);
+            LB.setPower(speed);
+
+            if (flywheel) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+}
+    public void backward(double speed, double time, boolean flywheel) {
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+
+            RF.setPower(-speed);
+            LF.setPower(-speed);
+            RB.setPower(-speed);
+            LB.setPower(-speed);
+
+            if (flywheel) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+    }
+
+    public void right(double speed, double time, boolean flywheel) {
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            RF.setPower(-speed);
+            LF.setPower(speed);
+            RB.setPower(speed);
+            LB.setPower(-speed);
+
+            if (flywheel) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+    }
+    public void left(double speed, double time, boolean flywheel) {
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            RF.setPower(speed);
+            LF.setPower(-speed);
+            RB.setPower(-speed);
+            LB.setPower(speed);
+
+            if (flywheel) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+    }
+    public void spinRight(double speed, double time, boolean flywheel) {
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            RF.setPower(-speed);
+            LF.setPower(speed);
+            RB.setPower(-speed);
+            LB.setPower(speed);
+
+            if (flywheel) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+    }
+    public void spinLeft(double speed, double time, boolean flywheel) {
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            RF.setPower(speed);
+            LF.setPower(-speed);
+            RB.setPower(speed);
+            LB.setPower(-speed);
+
+            if (flywheel) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+    }
+    public void rearAxisTurn(double speed, double time, boolean flywheel) {
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            RF.setPower(-speed);
+            LF.setPower(speed);
+            RB.setPower(0);
+            LB.setPower(0);
+
+            if (flywheel == true) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+    }
+    public void frontAxisTurn(double speed, double time, boolean flywheel) {
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            RF.setPower(0);
+            LF.setPower(0);
+            RB.setPower(speed);
+            LB.setPower(-speed);
+
+            if (flywheel == true) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+
+    }
+    public void bigBallGate(double time, boolean bigGateOpen, boolean flywheel) {
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            if (bigGateOpen) {
+            BBG.setPosition(BBG_OPEN);
+        } else {
+            BBG.setPosition(BBG_CLOSED);
+        }
+        if (flywheel == true) {
+            SM.setPower(SM_POWER);
+            SB.setPower(SB_POWER);
+
+        }}
+    }
+
+    public void smallBallGate(double time, boolean smallGateOpen, boolean flywheel) {
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            if (smallGateOpen){
+            SBG.setPosition(SBG_OPEN);
+        }
+        else {
+            SBG.setPosition(SBG_CLOSED);
+        }
+        if (flywheel) {
+            SM.setPower(SM_POWER);
+            SB.setPower(SB_POWER);
+
+        }}
+
+
+
+
+    }
+    public void brake(double time, boolean flywheel) {
+
+
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time)) {
+            RF.setPower(0);
+            LF.setPower(0);
+            RB.setPower(0);
+            LB.setPower(0);
+
+            if (flywheel == true) {
+                SM.setPower(SM_POWER);
+                SB.setPower(SB_POWER);
+
+            }
+        }
+
+
+        }
+}
